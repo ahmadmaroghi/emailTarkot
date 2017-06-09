@@ -13,7 +13,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Shoppy an Admin Panel Category Flat Bootstrap Responsive Website Template | Signup :: w3layouts</title>
+<title>Aplikasi Mailcrypt</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -45,10 +45,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<input type="text" name="email" placeholder="Email" required="">
 					<input type="password" name="password" class="lock" placeholder="Password">
 					<div class="forgot-top-grids">
-						
 						<div class="clearfix"> </div>
 					</div>
-					<input type="submit" name="SignUp" value="Sign up">														
+					<input type="submit" name="SignUp" value="Sign up & Generate">														
 				</form>
 				<div class="sign-down">
 				<h4>Already have an account? <a href="login.php"> Login here.</a></h4>
@@ -59,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--inner block end here-->
 <!--copy rights start here-->
 <div class="copyrights">
-	 <p>© 2016 Shoppy. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+	 <p>© 2017</p>
 </div>	
 <!--COPY rights end here-->
 <!--scrolling js-->

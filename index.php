@@ -6,7 +6,8 @@ if(empty($_SESSION['email']))
 }
 else
 {
-$s = $_SESSION['email'];
+$s = $_SESSION['username'];
+$e = $_SESSION['email'];
 include "proses/DBConfig.php";
 include "header.php"; 
 ?>

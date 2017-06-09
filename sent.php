@@ -14,7 +14,7 @@ include "header.php";
 <!--inner block start here-->
 <div class="inner-block">
     <div class="inbox">
-    	  <h2>Inbox</h2>
+    	  <h2>Sent</h2>
     	 <div class="col-md-4 compose">   	 	
     	 	<div class="mail-profile">
                 <div class="mail-pic">
@@ -32,8 +32,8 @@ include "header.php";
     	 	<div class="compose-bottom">
     	 		  <nav class="nav-sidebar">
 					<ul class="nav tabs">
-			          <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-inbox"></i>Inbox</a></li>
-			          <li class=""><a href="sent.php"><i class="fa fa-envelope-o"></i>Sent</a></li>                             
+			          <li class="active"><a href="inbox.php"><i class="fa fa-inbox"></i>Inbox</a></li>
+			          <li class=""><a href="sent.php"><i class="fa fa-envelope-o"></i>Sent</a></li>                            
 					</ul>
 				</nav>
     	 	</div>
@@ -55,10 +55,10 @@ include "header.php";
 	                <table class="table tab-border">
 	                    <tbody>
 	                <?php
-	                	$query = "SELECT * FROM mail WHERE mail_to = '$e' AND username <> '$e' AND flag = 2 ORDER BY mail_id DESC";
+	                	$query = "SELECT * FROM mail WHERE flag in('1','2') AND username='$e' ORDER BY mail_id DESC";
 	                	$row = mysqli_query($link, $query);
-	                	// echo $query;
-	                	// die();
+	                	//echo $query;
+	                	//die();
 	                	while($sql = mysqli_fetch_object($row)){
 
 
@@ -71,8 +71,8 @@ include "header.php";
 	                                <i class="fa fa-star icon-state-warning"> </i>
 	                            </td>
 	                            <td class="hidden-xs">
-	                            	<a href="read.php?id=<?php echo $sql -> mail_id; ?>&&username=<?php echo $sql-> username ?>">
-	                                <?php echo $sql -> username; ?>
+	                            	<a href="sent-details.php?id=<?php echo $sql -> mail_id; ?>&&mail_to=<?php echo $sql-> mail_to ?>">
+	                                <?php echo $sql -> mail_to; ?>
 	                                </a>
 	                            </td>
 	                            <td>
