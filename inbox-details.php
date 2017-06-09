@@ -40,6 +40,7 @@ include "header.php";
 						</div>
 						<div class="inbox-details-body">
 							<form class="com-mail" action="proses/mail.php" method="POST" enctype="multipart/form-data">
+                                
 								<input type="text" name="to" id="to" placeholder="To :">
 								<input type="text" name="subject" placeholder="Subject :">
 								<textarea rows="6" name="message" id="message" placeholder="Message"></textarea>

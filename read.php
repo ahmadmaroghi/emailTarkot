@@ -58,8 +58,8 @@ include "header.php";
 							<input type='hidden' name='id' id="id" class='form-control' value="<?php echo $_GET['id']; ?>"><br>
 								<input type="text" name="to" id="to" value="<?php echo $_GET['username']; ?>">
 								<input type="hidden" id="inputMessageDecrypt" value="<?php echo $row -> mail_message; ?>" />
-								<textarea rows="6" name="message" id="message" placeholder="Message">Message </textarea>
-								<textarea rows="6" name="MessageEncrypt" id="MessageEncrypt" placeholder="Message Encrypt">Message Encrypt</textarea>
+								<textarea rows="6" name="message" id="message" placeholder="Message"></textarea>
+								<textarea rows="6" name="MessageEncrypt" id="MessageEncrypt" placeholder="Message Encrypt"></textarea>
 								<div class="form-group">
 									<div class="btn btn-default btn-file">
 										<i class="fa fa-paperclip"> </i> Attachment

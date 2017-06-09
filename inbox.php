@@ -47,7 +47,7 @@ include "header.php";
 				           <i class="fa fa-refresh"> </i>
 				        </a>
 				        <div class="btn btn_1 btn-default mrg5R">
-				           <i class="fa fa-trash"> </i>
+				           <i class="fa fa-trash" id="trash"> </i>
 				        </div>
 				        <div class="clearfix"> </div>
 				    </div>
@@ -65,7 +65,7 @@ include "header.php";
 	                ?>
 	                        <tr class="unread checked">
 	                            <td class="hidden-xs">
-	                                <input type="checkbox" class="checkbox">
+	                                <input type="checkbox" class="checkbox" id="list[]" value="<?php echo $sql -> mail_id; ?>">
 	                            </td>
 	                            <td class="hidden-xs">
 	                                <i class="fa fa-star icon-state-warning"> </i>
@@ -102,6 +102,43 @@ include "header.php";
           <div class="clearfix"> </div>     
    </div>
 </div>
+<?php 
+    $trash = $_POST['trash'];
+    if(isset($trash)){
+      $trashArray = explode(',', $trash);
+      foreach ($trashArray as $ar) {
+         $query = "DELETE FROM mail WHERE mail_id = $ar";
+         mysqli_query($link, $query);
+       } 
+    }
+  ?>
+
+<script type="text/javascript">
+	$(document).ready(function() { 
+
+      $('#trash').click(function(){
+        
+        var trash = [];
+        $('.checkbox').each(function(){
+         if($(this).is(":checked")){
+          trash.push($(this).val());
+         }
+        });
+        trash = trash.toString();
+        
+        $.ajax({
+          url: "inbox.php",
+          method: "POST",
+          data:{trash:trash},
+          success:function(data){
+            location.reload(alert('Mail removed'));
+           	//alert(trash);
+            //$('#result').html(data);
+          }
+        });
+      });
+    });
+</script>
 
 <!--inner block end here-->
 <?php 
